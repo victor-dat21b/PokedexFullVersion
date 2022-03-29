@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>showAllPokemon</title>
+</head>
+<body>
+<table>
+
+    <tbody>
+
+    <tr th:each="pokemon : ${pokemons}">
+        <td><span th:text="${pokemon.toString()}"> </span></td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
