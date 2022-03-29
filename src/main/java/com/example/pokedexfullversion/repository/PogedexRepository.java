@@ -52,7 +52,9 @@ public class PogedexRepository {
         }
 
 
-        void insertData() public void createPokemon(Pokemon pokemon) {
+
+
+        public void createPokemon(Pokemon pokemon) {
         try {
             String query = "INSERT INTO pokemon VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement preparedStatement = connection.prepareStatement(query);

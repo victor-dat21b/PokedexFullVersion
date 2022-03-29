@@ -17,4 +17,10 @@ public class PokedexLogic {
     public ArrayList<Pokemon> showAllPokemon(){
         return this.myRepo.showAllPokemon();
     }
+
+
+    public void createPokemon(Pokemon pokemon){
+        this.myRepo.createPokemon(pokemon);
+
+    }
 }

@@ -28,4 +28,23 @@ public class PokemonController {
     }
 
 
+
+
+
+
+
+    @GetMapping("/addpokemon")
+    public String addPokemon(){
+        PokedexLogic myLogic = new PokedexLogic();
+        myLogic.createPokemon(new Pokemon(16, "Pidgey", 56, 35, 35, 40, 45, 40, "Normal", "Flying"));
+
+
+
+        return "addpokemon";
+    }
+
+
+
+
+
 }
