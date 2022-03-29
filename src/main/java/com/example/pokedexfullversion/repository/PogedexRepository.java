@@ -52,20 +52,26 @@ public class PogedexRepository {
         }
 
 
-        void insertData() {
-            try {
-                String query = "INSERT INTO pokemon VALUES (null, ?, ?);";
-                PreparedStatement preparedStatement = connection.prepareStatement(query);
-                preparedStatement.setString(1, "Shooter");
-                preparedStatement.setDouble(2, 100);
-                preparedStatement.executeUpdate();
-                System.out.println("Indsat ny række OK");
-            } catch (Exception e) {
-
-            }
-
+        void insertData() public void createPokemon(Pokemon pokemon) {
+        try {
+            String query = "INSERT INTO pokemon VALUES (null, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1, pokemon.getName());
+            preparedStatement.setInt(2, pokemon.getSpeed());
+            preparedStatement.setInt(3, pokemon.getSpecial_defence());
+            preparedStatement.setInt(4, pokemon.getSpecial_attack());
+            preparedStatement.setInt(5, pokemon.getDefence());
+            preparedStatement.setInt(6, pokemon.getAttack());
+            preparedStatement.setInt(7, pokemon.getHp());
+            preparedStatement.setString(8, pokemon.getPrimary_type());
+            preparedStatement.setString(9, pokemon.getSecondary_type());
+            preparedStatement.executeUpdate();
+            System.out.println("Indsat ny række OK");
+        } catch (Exception e) {
 
         }
+
+    }
 
         void connectToMySQL() {
             if (connection == null) {
